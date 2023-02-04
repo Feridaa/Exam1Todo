@@ -1,5 +1,6 @@
 "use strict";
 
+//******************AFFICHAGE****************************
 // insertion d'un nouveau todo
 
 const input = document.querySelector("#input-todo");
@@ -24,3 +25,14 @@ document.addEventListener("keyup", function (e) {
 });
 
 menuListe.addEventListener("keyup", affichage);
+
+//**********************EFFACER************************
+
+const bouton = document.querySelector("button-done");
+
+menuListe.addEventListener("click", (e) => {
+  if (e.target.classList.contains("button-done")) {
+    // en efface l'élément parent
+    e.target.parentElement.remove();
+  }
+});
